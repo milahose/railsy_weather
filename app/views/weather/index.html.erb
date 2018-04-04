@@ -1,0 +1,24 @@
+<h1 class='welcome'>Welcome to Railsy Weather!</h1>
+<h4>Find Your Local Weather by Making a Selection Below:</h4>
+
+<div id="location-select">
+  <%= form_for User.new, url: weather_index_path do |f| %>
+
+    <% I18n.with_locale(:countries) do %>
+      <p id='country'>
+      <%= select_tag(:country, options_for_select(
+          ISO3166::Country.codes.sort.map { |code| [ISO3166::Country.new(code).name, code] }, 
+          @country
+        ), {:include_blank => '-- Select Your Country --'}) %>
+      </p>
+    <% end %>
+
+    <span id='city'>
+      <%= text_field_tag 'city', nil, placeholder: 'Enter your city...', required: true %>
+    </span>
+    <span id='submit-btn'>
+      <%= submit_tag "Check Weather" %>
+    </span>
+
+  <% end %>
+</div>

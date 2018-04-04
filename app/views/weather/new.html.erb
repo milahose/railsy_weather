@@ -1,0 +1,26 @@
+<% unless @clean_weather.nil? %>
+<h1 class='current'>Current Weather</h1>
+
+<div class='panel'>
+  <h2 class='city' id='city'><%= @clean_weather.name %>, <%= @clean_weather.sys.country %></h2>
+  <div class='weather' id='weather'>
+    <div class='group-container'>
+      <div class='group left'>
+        <h3 id='dt'><%= Time.at(@clean_weather.dt).strftime("%b %d %Y") %></h3>
+        <h3 id='description'><%= @clean_weather.weather[0].description %></h3>
+      </div>
+      <div class='group right'>
+        <h3 id='wind'>Wind <%= @clean_weather.wind.speed %> mph</h3>
+        <h3 id='humidity'>Humidity <%= @clean_weather.main.humidity %>%</h3>
+      </div>
+    </div>
+    <div class='temperature' id='temperature'>
+      <h1 class='temp' id='temp'>
+        <span id='num'><%= convert_to_fahrenheit(@clean_weather.main.temp) %></span>
+        <span class='fahrenheit active' id='fahrenheit' href="">&deg;F</span>
+      </h1>
+    </div>
+  </div>
+  <div class='find-new'><%= link_to "Find a Different Location", weather_index_path %></div>
+</div>
+<% end %>

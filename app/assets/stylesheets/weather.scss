@@ -1,0 +1,191 @@
+// Place all the styles related to the Weather controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+	font-family: 'Roboto', sans-serif;
+	background: #3F51B5;
+	color: #fff;
+}
+
+#location-select {
+	text-align: center;
+	margin: 0 auto;
+}
+
+#country > select, 
+input[type='text'],
+::placeholder, {
+	color: #000;
+	background: #fff;
+}
+
+#country > select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px 45px;
+  display: block;
+	width: 260px;
+	margin: 0 auto;
+}
+
+#country > select:hover {
+	cursor: pointer;
+	background: lightgray;
+}
+
+input[type='text'] {
+	width: 150px;
+	padding: 5px;
+	font-size: 12px;
+	margin: 0;
+}
+
+input:focus {
+	outline: lightgray;
+}
+
+input[type='submit'] {
+	background: none;
+	border: none;
+	font-size: 12px;
+	padding: 7px 3px;
+	color: #000;
+	background: lightseagreen;
+}
+
+input[type='submit']:hover {
+	cursor: pointer;
+	background: lightgray;
+}
+
+h1 {
+	padding-top: 5%;
+}
+
+.current {
+	margin: 10% 0 5% 0;
+}
+
+.find-new {
+	text-align: center;
+}
+
+h1,
+h2,
+h3, 
+h4 {
+	text-align: center;
+	font-weight: 100;
+	line-height: 1.1;
+	letter-spacing: 0.025em;
+	margin: 0; 
+	padding: 0;
+}
+
+.welcome {
+	margin-top: 10%;
+}
+
+h4 {
+	margin: 2% 0;
+}
+
+a {
+	color: white;
+	opacity: 0.54;
+	text-decoration: none;
+}
+
+a:hover,
+.active {opacity: 1;}
+
+.wrapper {
+	width: 480px;
+	margin: 0 auto;
+}
+
+.panel {
+	width: 100%;
+	display: inline-block;
+}
+
+.weather {
+	width: 100%;
+	margin-top: 20px;
+	display: inline-block;
+}
+
+.city {
+	width: 50%;
+	text-align: left;
+	margin: 0 auto;
+	border-bottom: solid thin white;
+	text-transform: uppercase;
+	color: #E8E8E8;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.group {
+	width: 50%;
+	margin-bottom: 20px;
+	margin-right: 100px;
+	margin-left: -100px;
+	text-align: right;
+	float: right;
+	clear: both;
+}
+
+.temperature {
+	margin: 0 auto;
+}
+
+.temp {
+	width: 50%;
+	font-size: 4.5em;
+	font-weight: 300;
+	line-height: 0.75;
+	margin: 0 auto;
+	text-align: left !important;
+}
+
+.fahrenheit {
+	font-size: 1.75rem;
+	vertical-align: super;
+	margin-left: -20px;
+	padding-left: -2px;
+}
+
+.divider {
+	margin: 0 0.02em;
+}
+
+@media screen and (max-width: 868px) {
+	.temperature {
+		width: 100%;
+		margin: 20px auto;
+	}
+
+	.temp {
+		text-align: center !important;
+	}
+
+	.group-container {
+		margin: 0 auto;
+		position: relative;
+	}
+
+	.left, .right {
+		width: 100%;
+		margin: 0 auto -150px auto;
+	}
+
+	.right {
+		margin-top: 200px;
+	}
+
+	.find-new {
+		margin-top: 120px;
+	}
+}
