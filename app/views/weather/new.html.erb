@@ -21,6 +21,11 @@
       </h1>
     </div>
   </div>
-  <div class='find-new'><%= link_to "Find a Different Location", weather_index_path %></div>
+  <div class='find-new'><%= link_to "Find a Different Location", root_path %></div>
 </div>
+<% end %>
+
+<% if new_weather_path && @clean_weather.nil? -%>
+  <div class="flash-notice">Oops, that doesn't appear to be a valid city/country combo. Please try again.</div>
+  <div class='try-again'><%= link_to "Please Try Again", root_path %></div>
 <% end %>

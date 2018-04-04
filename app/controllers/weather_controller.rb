@@ -13,10 +13,12 @@ class WeatherController < ApplicationController
       elsif weather_params[:country].empty?  
         flash[:notice] = "Oops, your country must be selected in order to proceed."
         redirect_to new_weather_path
-      else
+      elsif check_weather == false
+        flash.now[:notice] = "Oops, that doesn't appear to be a valid city/country combo. Please try again."
+        redirect_to new_weather_path
+      else 
         set_session(@weather)
         @clean_weather = clean_hash_string(@weather.to_s)
-        render :new
       end
     end
   end

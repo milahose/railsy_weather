@@ -9,7 +9,7 @@
       <%= select_tag(:country, options_for_select(
           ISO3166::Country.codes.sort.map { |code| [ISO3166::Country.new(code).name, code] }, 
           @country
-        ), {:include_blank => '-- Select Your Country --'}) %>
+        ), {:include_blank => '-- Select Your Country --', required: true}) %>
       </p>
     <% end %>
 
@@ -22,3 +22,4 @@
 
   <% end %>
 </div>
+
